@@ -1,0 +1,60 @@
+﻿@model List<Instructor>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<a class="btn btn-info" href="/Instructor/AddNew">Add New</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Image</th>
+            <th scope="col">Address</th>
+            <th scope="col">Salary</th>
+            <th scope="col">CourseId</th>
+            <th scope="col">Department Id</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach(var item in Model )
+    {
+
+            <tr>
+                <th scope="col">@item.Id</th>
+                <th scope="col">@item.Name</th>
+                <th scope="col"><img src="/Images/@item.Image"></th>
+                <th scope="col">@item.Address</th>
+                <th scope="col">@item.Salary</th>
+                <th scope="col">@item.CourseId</th>
+                <th scope="col">@item.DepartmentId</th>
+                <th scope="col"><a class="btn btn-primary" href="/Instructor/Update/@item.Id"> Update </a></th>
+@*                 <th scope="col"><a class="btn btn-danger" href="/Instructor/Delete/@item.Id"> Delete </a></th>
+ *@                <th scope="col"><a id="Delete" class="btn btn-danger" onclick="checkDelete();"> Delete </a></th>
+                <script>
+                    function checkDelete() {
+
+                        if (confirm("Are You Sure") == true) {
+                            document.getElementById("Delete").href = "/Instructor/Delete/@item.Id";
+                        } else {
+                            document.getElementById("Delete").href = "/Instructor/index";
+                        }
+                    }
+                </script>
+           </tr>
+    }
+    </tbody>
+</table>
+
+<style>
+    img {
+        width: 300px;
+        height: 200px
+    }
+</style>
+

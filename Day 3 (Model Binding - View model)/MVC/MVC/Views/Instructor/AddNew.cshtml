@@ -1,0 +1,34 @@
+﻿@model Instructor
+@{
+    ViewData["Title"] = "AddNew";
+}
+
+<h1>AddNew</h1>
+<form method = "Post" action="/Instructor/SaveNew">
+    <div class="form-group">
+        <label for="exampleInputEmail1" >Name</label>
+        <input name="Name" type="text" value="@Model?.Name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
+        <small id="emailHelp"  class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Image</label>
+        <input name="Image" type="text" value="@Model?.Image" class="form-control" id="exampleInputPassword1" placeholder="Image">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Address</label>
+        <input name="Address" type="text" value="@Model?.Address" class="form-control" id="exampleInputPassword1" placeholder="Address">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Salary</label>
+        <input name="Salary" type="text" value="@Model?.Salary" class="form-control" id="exampleInputPassword1" placeholder="Salary">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Course Id</label>
+        <input name="CourseId" type="text" value="@Model?.CourseId" class="form-control" id="exampleInputPassword1" placeholder="Course Id">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Department Id</label>
+        <input name="DepartmentId" type="text" value="@Model?.DepartmentId" class="form-control" id="exampleInputPassword1" placeholder="Department Id">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

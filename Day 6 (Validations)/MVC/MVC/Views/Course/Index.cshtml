@@ -1,0 +1,44 @@
+﻿@model List<Course>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<br />
+<a href="/Course/AddNewCourse" class="btn btn-info">Add Course</a>
+<br />
+<br />
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Degree</th>
+            <th scope="col">Min Degree</th>
+            <th scope="col">Department Id</th>
+            <th scope="col">Departmen tName</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Course item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Degree</td>
+                <td>@item.MinDegree</td>
+                <td>@item.DepartmentId</td>
+                @foreach(Department dept in ViewBag.depts)
+                {
+                    @if (item.DepartmentId == dept.Id)
+                    {
+                        <td>@dept.Name</td>
+                    }
+                }
+
+            </tr>
+        }
+
+    </tbody>
+</table>

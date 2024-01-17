@@ -1,0 +1,53 @@
+﻿@{
+    Layout = "_AdvLayout";
+}
+
+<!-- To Change In Sections (Must Be Use RenderSection In Layout)-->
+
+@section Navigation {
+    <!-- Your footer content -->
+
+}
+@section Header {
+    <!-- Your footer content -->
+}
+@section Section {
+    <!-- Your footer content -->
+}
+@section Footer {
+    <!-- Your footer content -->
+}
+
+<div style="width:70%; margin:20px auto">
+    <table class="table table-striped table-light">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Picture</th>
+                <th scope="col">Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(Product pro in Model)
+            {
+                <tr>
+                    <th scope="row">@pro.Id</th>
+                    <td>@pro.Name</td>
+                    <td><img src="~/Images/@pro.Image"></td>
+                    <td>
+                        <button type="button" class="btn btn-primary">
+                            <a style="color:white;text-decoration:none;font-weight:bold" href="productdetails?id=@pro.Id">Details</a>
+                         </button>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+</div>
+
+<style>
+    img{width:300px;height:200px}
+</style>
