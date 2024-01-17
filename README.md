@@ -1,2 +1,3 @@
 # ASP.Net-Core-MVC-Assignments
-ITI Scholarship Tasks IN ASP.Net Core MVC
+ITI Scholarship Tasks IN ASP.Net Core MVC 
+Each Assignment is based on the previous Assignment
